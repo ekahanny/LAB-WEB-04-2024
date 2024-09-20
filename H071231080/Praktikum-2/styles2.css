@@ -1,0 +1,357 @@
+/* Aturan dasar untuk semua elemen dan HTML */
+*, html {
+    /* Membuat scroll lebih halus ketika pengguna menavigasi halaman */
+    scroll-behavior: smooth;
+    /* Menghapus margin dan padding default dari semua elemen */
+    margin: 0;
+    padding: 0;
+    /* Menetapkan metode perhitungan ukuran elemen menjadi border-box */
+    box-sizing: border-box;
+    /* Menetapkan font default untuk dokumen */
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    /* Navbar mengambil lebar penuh halaman */
+    width: 100%;
+    /* Padding di sekitar elemen navbar */
+    padding: 1rem;
+    /* Mengatur elemen di dalam navbar untuk berbaris secara horizontal */
+    display: flex;
+    justify-content: center; /* Pusatkan konten secara horizontal */
+    align-items: center; /* Pusatkan konten secara vertikal */
+    /* Navbar tetap di atas halaman */
+    position: fixed;
+    /* Tinggi navbar */
+    height: 50px;
+    /* Z-index agar navbar tetap di atas elemen lain */
+    z-index: 1;
+    /* Warna latar belakang navbar */
+    background-color: rgb(232, 169, 217);
+}
+
+.navbar img {
+    /* Tinggi gambar logo di navbar */
+    height: 35px;
+}
+
+.navbar ul {
+    /* Tampilkan item daftar secara horizontal */
+    display: flex;
+    /* Menghapus bullet dari daftar */
+    list-style: none;
+}
+
+.navbar-center {
+    /* Mengatur font tambahan pada teks di tengah navbar */
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    /* Menggeser margin kanan */
+    margin-right: -25px;
+}
+
+.navbar-center a {
+    /* Menyelaraskan teks di tengah vertikal */
+    line-height: 60px;
+    /* Spasi horizontal antara elemen */
+    padding: 0 25px;
+    /* Warna teks */
+    color: rgb(63, 22, 63);
+    /* Tampilkan elemen sebagai blok */
+    display: block;
+}
+
+.navbar ul li a:hover {
+    /* Warna latar belakang saat hover pada link */
+    background-color: rgba(255, 228, 249, 0.699);
+    /* Warna teks saat hover */
+    color: rgb(63, 22, 63);
+    /* Durasi transisi efek hover */
+    transition: all 500ms;
+}
+
+/* SECTION */
+.container {
+    /* Latar belakang gambar pada container */
+    background-image: url(image/BG22.jpg);
+    /* Lebar maksimum container */
+    max-width: 100%;
+    /* Mengatur margin secara otomatis */
+    margin: 0 auto;
+    /* Padding di dalam container */
+    padding: 2rem;
+}
+
+.container h4, h1 {
+    /* Jarak margin atas */
+    margin-top: 20px;
+    /* Warna teks */
+    color: rgb(88, 31, 88);
+    /* Font khusus untuk elemen judul */
+    font-family: "Dancing Script", cursive;
+}
+
+p {
+    /* Warna teks paragraf */
+    color: rgb(88, 31, 88);
+    /* Font khusus untuk elemen paragraf */
+    font-family: "Dancing Script", cursive;
+}
+
+.row {
+    /* Flexbox untuk mengatur layout kolom */
+    display: flex;
+    justify-content: space-between; /* Menyebarkan elemen */
+    align-items: center;
+    padding: 2rem;
+    /* Arahkan kolom dari kanan ke kiri */
+    flex-direction: row-reverse;
+}
+
+.col1, .col2 {
+    /* Membuat kolom fleksibel */
+    flex: 1;
+}
+
+.col1 {
+    /* Padding di kanan kolom 1 */
+    padding-right: 2rem;
+}
+
+h1 {
+    /* Ukuran font untuk judul utama */
+    font-size: 2.5rem;
+    /* Jarak bawah elemen */
+    margin-bottom: 1rem;
+}
+
+p {
+    /* Jarak bawah paragraf */
+    margin-bottom: 1rem;
+}
+
+/* ABOUT SECTION */
+.title h2 {
+    /* Padding atas untuk memberi ruang */
+    padding-top: 5rem;
+    /* Warna teks */
+    color: rgb(88, 31, 88);
+    /* Ukuran font judul */
+    font-size: 1.8rem;
+    /* Jarak bawah elemen */
+    margin-bottom: 1rem;
+}
+
+.about-content {
+    /* Flexbox untuk mengatur konten tentang */
+    display: flex;
+    /* Jarak antar elemen */
+    gap: 2rem;
+}
+
+/* IMAGE SECTION */
+.container3 {
+    /* Margin dan padding untuk kontainer gambar */
+    margin: 0 auto;
+    padding: 5rem 10rem;
+    /* Tampilkan elemen sebagai flexbox dan rata di tengah */
+    display: flex;
+    justify-content: center;
+    /* Latar belakang gambar */
+    background-image: url(image/BG22.jpg);
+}
+
+.gallery-grid {
+    /* Membuat grid untuk galeri gambar */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom sama besar */
+    gap: 10px;
+    padding: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.gallery-grid div {
+    /* Mengatur posisi elemen dan menyembunyikan overflow */
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery h2 {
+    /* Warna teks galeri */
+    color: rgb(88, 31, 88);
+    /* Pusatkan teks */
+    text-align: center;
+}
+
+.gallery-grid img {
+    /* Gambar memenuhi ruang dengan rasio tetap */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Transisi ketika gambar di-hover */
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    /* Membesarkan gambar saat hover */
+    transform: scale(1.3);
+}
+
+/* FOOTER */
+.footer {
+    /* Warna latar belakang footer */
+    background-color: rgb(232, 169, 217);
+    /* Warna teks footer */
+    color: white;
+    /* Padding untuk memberi ruang */
+    padding: 1rem 0;
+}
+
+.footer-container {
+    /* Mengatur layout footer */
+    height: 50px;
+    justify-content: space-between;
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-left, .footer-right {
+    /* Flexbox untuk posisi konten footer */
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo-text {
+    /* Tampilkan logo dan teks dalam satu baris */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-left img {
+    /* Ukuran logo di footer */
+    height: 50px;
+}
+
+.footer-right {
+    /* Jarak antara elemen di sisi kanan footer */
+    gap: 2rem;
+}
+
+.footer-column {
+    /* Kolom dalam footer diatur secara vertikal */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer h3 {
+    /* Font dan warna untuk judul di footer */
+    font-family: "Lobster", sans-serif;
+    color: rgb(88, 31, 88);
+}
+
+.footer-column p, a {
+    /* Font dan ukuran untuk teks di kolom footer */
+    font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    margin-bottom: 0.5rem;
+    color: rgb(88, 31, 88);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* Menyesuaikan layout untuk layar yang lebih kecil */
+    .container, .container3 {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .row {
+        /* Susun kolom secara vertikal */
+        flex-direction: column;
+        padding: 5rem 1rem;
+    }
+
+    .col1, .col2 {
+        /* Lebar kolom 100% pada layar kecil */
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .col2 img {
+        /* Sesuaikan gambar di kolom */
+        max-width: 100%;
+        height: auto;
+    }
+
+    .about-content {
+        /* Susun konten tentang secara vertikal */
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .about h2 {
+        /* Ukuran font lebih kecil */
+        font-size: 1.6rem;
+    }
+
+    .container2 {
+        padding: 3rem 2rem;
+    }
+
+    .gallery-grid {
+        /* Grid galeri hanya satu kolom pada layar kecil */
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fill, minmax(200px, auto));
+    }
+}
+
+@media (max-width: 480px) {
+    /* Menyesuaikan layout untuk layar yang sangat kecil */
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .gallery-grid {
+        /* Grid galeri dengan lebar minimum */
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .footer {
+        /* Footer diatur secara vertikal dan teks dipusatkan */
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left, .footer-right {
+        margin-bottom: 0.5rem;
+    }
+
+    .container2 {
+        padding: 2rem 1rem;
+    }
+
+    .about h2 {
+        font-size: 1.4rem;
+    }
+
+    .about-content p {
+        font-size: 0.9rem;
+    }
+
+    .container3 {
+        padding: 2rem;
+}
+}
