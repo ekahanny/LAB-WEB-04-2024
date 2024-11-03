@@ -18,7 +18,6 @@ $nama = "";
 $nim = "";
 $programStudi = "";
 
-// Tangani aksi edit jika ada parameter action=edit
 if (isset($_GET['action']) && $_GET['action'] == 'edit') {
     $id = $_GET['id'];
     $queryEdit = "SELECT * FROM mahasiswa WHERE id='$id'";
@@ -31,7 +30,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit') {
     }
 }
 
-// Tangani aksi submit (tambah atau edit data)
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nim = $_POST['nim'];
     $nama = $_POST['nama'];
@@ -54,15 +52,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
     } else {
-        // Periksa apakah NIM sudah ada (untuk penambahan data baru)
+    
         $queryCheckNim = "SELECT * FROM mahasiswa WHERE nim = '$nim'";
         $executeCheckNim = mysqli_query($conn, $queryCheckNim);
 
-        // Jika NIM sudah ada
+    
         if (mysqli_num_rows($executeCheckNim) > 0) {
             $error = "Gagal menambahkan data, NIM sudah ada.";
         } else {
-            // Insert data baru
+            
             $queryInsert = "INSERT INTO mahasiswa (nim, nama, prodi) VALUES ('$nim', '$nama', '$programStudi')";
             $executeQInsert = mysqli_query($conn, $queryInsert);
             if ($executeQInsert) {

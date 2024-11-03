@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Registrasi</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Style umum */
+        
         body {
             font-family: Arial, sans-serif;
             background-color: #d397b8;

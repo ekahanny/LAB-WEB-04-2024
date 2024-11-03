@@ -11,7 +11,7 @@
         $sql = "SELECT * FROM users WHERE username='$username' OR email='$username'";
         $result = $conn->query($sql);
 
-        // Mengecek apakah pengguna ditemukan dalam database
+        
         if ($result -> num_rows > 0) {
             $user = $result->fetch_assoc();
             
@@ -150,7 +150,7 @@
             text-align: center;
         }
 
-        /* Responsive */
+
         @media (max-width: 768px) {
             .container-fluid {
                 width: 90%;
@@ -180,7 +180,7 @@
                 <label for="inputPassword">Password</label>
                 <input type="password" id="inputPassword" name="inputPassword" placeholder="Password">
 
-                <!-- Menampilkan pesan kesalahan di bawah input password -->
+                
                 <?php if (!empty($error_message)): ?>
                     <div class="error-message">
                         <?php echo $error_message; ?>

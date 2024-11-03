@@ -10,15 +10,13 @@ if (!isset($_SESSION['username'])) {
 $success = "";
 $error = "";
 
-// Ambil data role dan informasi user dari session
 $role = $_SESSION['role'] ?? 'mahasiswa'; 
 $username = $_SESSION['username'] ?? 'Guest';
 $email = $_SESSION['email'] ?? 'Not Available';
 
-// Ambil halaman saat ini dari URL, jika tidak ada default ke halaman 1
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-$limit = 5; // Batasi jumlah data per halaman
-$offset = ($page - 1) * $limit; // Hitung offset untuk query
+$limit = 5; 
+$offset = ($page - 1) * $limit;
 
 
 $queryTotalRows = "SELECT COUNT(*) as total FROM mahasiswa";
