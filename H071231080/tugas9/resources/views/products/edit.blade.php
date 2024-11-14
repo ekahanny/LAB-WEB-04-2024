@@ -1,0 +1,55 @@
+@extends('layouts.app')
+
+@section('title', 'Edit Product')
+
+@section('content')
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+<div class="container" style="width: 50%; margin: 0 auto;font-family: 'Poppins', sans-serif; margin-top:100px;">
+    <h1 class="text-center">Edit Product</h1>
+
+    <form action="{{ route('products.update', $product) }}" method="POST" style="width: 70%; border-radius: 10px; overflow: hidden; margin: 0 auto; font-family: 'Poppins', sans-serif;">
+        @csrf
+
+        @method('PUT')
+
+        <div class="mb-3">
+            <label for="name" class="form-label" >Name</label>
+            <input type="text" name="name" class="form-control" value="{{ old('name', $product->name) }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="description" class="form-control">{{ old('description', $product->description) }}</textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" name="price" class="form-control" value="{{ old('price', $product->price) }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="stock" class="form-label">Stock</label>
+            <input type="number" name="stock" class="form-control" value="{{ old('stock', $product->stock) }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="category_id" class="form-label">Category</label>
+            <select name="category_id" class="form-select" required>
+                <option value="">Select Category</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}" {{ $product->category_id == $category->id ? 'selected' : '' }}>
+                        {{ $category->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="d-flex justify-content-between mt-4 mb-4">
+            <a href="{{ route('products.index') }}" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-primary" style="background-color: burlywood; color:black;">Update Product</button>
+        </div>
+    </form>
+</div>
+
+@endsection
