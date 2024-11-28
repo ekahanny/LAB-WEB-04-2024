@@ -2,11 +2,32 @@
 session_start();
 
 if (!isset($_SESSION['user'])) {
-    header('Location: TP_Login.php');
+    header('Location: TP6_Login.php');
     exit;
 }
 
+// Set batas waktu login (misalnya 15 detik)
+$max_login_duration = 15; 
+
+// Mengecek apakah waktu login ada
+if (isset($_SESSION['login_time'])) {
+    // Hitung waktu yang sudah berlalu
+    $elapsed_time = time() - $_SESSION['login_time'];
+
+    // Jika sudah melebihi 15 detik, logout otomatis
+    if ($elapsed_time > $max_login_duration) {
+        session_unset();   // Hapus semua data sesi
+        session_destroy(); // Hancurkan sesi
+        header('Location: TP6_Login.php?message=Session expired');  // Redirect ke halaman login
+        exit();
+    }
+} else {
+    header('Location: TP6_Login.php');
+    exit;
+}
+$remaining_time = $max_login_duration - $elapsed_time;
 $user = $_SESSION['user'];
+$_SESSION['login_time'] = time(); 
 $users = [
     // Users array here, the same as in index.php
 ];
@@ -31,6 +52,7 @@ function displayUser($user) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <meta http-equiv="refresh" content="15;url=TP6_Login.php">
 </head>
 <body>
     <div class="dashboard-container">

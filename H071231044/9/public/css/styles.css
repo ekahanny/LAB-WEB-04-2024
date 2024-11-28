@@ -1,0 +1,57 @@
+/* Sidebar */
+.sidebar {
+    width: 250px;              /* Lebar sidebar */
+    height: 100vh;             /* Tinggi penuh layar */
+    position: fixed;           /* Tetap di sebelah kiri layar */
+    top: 0;
+    left: 0;
+    overflow-y: auto;          /* Scroll jika konten terlalu panjang */
+    background-color: #007bff; /* Warna biru untuk sidebar */
+    padding-top: 20px;         /* Jarak konten sidebar dari atas */
+    z-index: 1000;             /* Pastikan sidebar berada di atas elemen lainnya jika diperlukan */
+}
+
+/* Konten utama */
+.content-wrapper {
+    margin-left: 250px;        /* Memberikan ruang di sebelah kiri untuk sidebar */
+    padding: 20px;
+    background-color: #f8f9fa; /* Warna latar konten utama */
+    min-height: 100vh;         /* Tinggi penuh layar */
+    overflow: auto;            /* Mengizinkan scroll pada konten utama jika konten terlalu panjang */
+}
+
+/* Tambahan styling */
+.table thead th {
+    font-weight: bold;
+}
+
+.profile-icon img {
+    border-radius: 50%;
+}
+
+.badge-warning {
+    background-color: #ffcc00;
+}
+
+.badge-success {
+    background-color: #28a745;
+}
+
+.nav-link:hover {
+    color: #000000; /* Ganti dengan warna yang diinginkan saat hover */
+    text-decoration: underline; /* Menambah garis bawah saat hover */
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+.center-content img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+}

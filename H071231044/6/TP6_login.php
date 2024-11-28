@@ -60,6 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     foreach ($users as $user) {
         if (($user['email'] === $input || $user['username'] === $input) && password_verify($password, $user['password'])) {
             $_SESSION['user'] = $user;
+            $_SESSION['login_time'] = time();
             header('Location: TP6_Dash.php');
             exit;
         }
