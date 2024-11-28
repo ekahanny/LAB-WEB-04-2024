@@ -1,0 +1,234 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Styling untuk latar belakang */
+.background {
+    background-image: url('./images/Upin\ ipin.jpg'); /* Ganti dengan path gambar latar belakang */
+    background-size: cover; /* Menyesuaikan gambar dengan ukuran layar */
+    background-position: center; /* Posisikan gambar di tengah */
+    height: 100vh; /* Tinggi penuh layar */
+    display: flex;
+    justify-content: center; /* Pusatkan konten secara horizontal */
+    align-items: center; /* Pusatkan konten secara vertikal */
+    position: relative; 
+    color: #fafafa;
+    text-align: center; 
+}
+
+/* Styling untuk overlay (opsional) */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Gelap transparan untuk kontras */
+}
+
+/* Styling untuk teks */
+.content {
+    position: relative; /* Agar teks tetap di atas overlay */
+    z-index: 1; /* Membuat teks lebih tinggi dari overlay */
+    font-size: 2rem; /* Ukuran teks */
+}
+
+#h1home {
+    font-family: 'Poppins'; 
+    color: #ffcc24; 
+    margin-top: 20px; 
+    text-align: left;
+    position: absolute;
+    right: 430px;
+    bottom: 100px;
+    font-size: 100px;
+}
+
+#phome {
+    font-family: 'Roboto'; 
+    font-size: 40px;
+    text-align: left;
+    position: absolute;
+    white-space: nowrap;
+    right: 0px;
+    bottom: -20px;
+}
+
+#conab {
+    background-color: #0a72fbaf;
+    color: #f9c415;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 1300px;
+    text-align: center;
+    position: relative;
+}
+
+#abh1 {
+    font-family: 'annapurna SIL';
+    font-size: 50px;
+    margin: 0;
+}
+
+#abh2 {
+    font-size: 1.5em;
+    font-family: 'Poppins'; 
+    color: #f9c415;
+    font-size: 50px;
+}
+
+#abp {
+    font-size: 25px;
+    line-height: 1.5;
+    color: #f9f9f9;
+    text-align: justify;
+}
+
+#conab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('circuit-pattern.png');
+    opacity: 0.1;
+    border-radius: 15px;
+}
+
+#h1con {
+    font-family: 'Poppins'; 
+    color: #f9c415; 
+    margin-top: 20px; 
+    text-align: left;
+    position: absolute;
+    right: 40px;
+    bottom: 120px;
+    font-size: 100px;
+    text-wrap: nowrap;
+}
+
+#pcon {
+    font-family: 'Roboto';
+    font-size: 40px; 
+    text-align: left;
+    position: absolute;
+    white-space: nowrap;
+    right: -100px;
+    bottom: 0px;
+}
+
+#btncon1 {
+    border-radius: 20px;
+    width: 250px;
+    height: 40px;
+    color: #ffffff;
+    background-color: rgb(0, 157, 255);
+    font-size: 30px;
+    position: absolute;
+    left: -740px;
+    bottom: -75px;
+    border-color: transparent;
+}
+#btnconform {
+    border-radius: 20px;
+    width: 150px;
+    height: 40px;
+    color: #ffffff;
+    background-color: rgb(210, 197, 5);
+    font-size: 35px;
+    position: relative;
+    border-color: transparent;
+    margin-right: 230px;
+    margin-left: 230px;
+}
+.btnform2 {
+    translate: -115px;
+}
+
+.btnform3 {
+    translate: 115px;
+}
+
+.hidden {
+    display: none;
+}
+.visible {
+    display: block;
+}
+
+#contactContent {
+    position: relative; 
+    z-index: 1; 
+    font-size: 2rem; 
+}
+#h1conform {
+    font-family: 'Montserrat';
+    color: #ffffff; 
+    margin-top: 20px; 
+    text-align: center;
+    position: relative;
+    font-size: 75px;
+    text-wrap: nowrap;
+}
+#contactForm {
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    position: relative;
+    z-index: 9999;
+}
+
+input, textarea {
+    pointer-events: auto !important;
+    background-color: white !important;
+    color: black !important;
+}
+label {
+    position: absolute;
+    align-items: start;
+    text-align: left;
+    left: 125px;
+}
+
+input {
+    width: 1000px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 10px 15px;
+}
+textarea {
+    width: 1000px;
+    height: 160px;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 10px 15px;
+}
+#concon {
+    background-color: rgba(0, 132, 255, 0.874);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 1300px;
+    text-align: center;
+    position: relative;
+}
+
+#fcopy {
+    position: absolute;
+    text-align: left;
+    left: 50px;
+    bottom: 10px;
+}
+
+.social-media {
+    position: absolute;
+    bottom: 1px;
+    justify-content: center;
+    align-items: right;
+    right: 1000px;
+    translate: 900px;
+}
